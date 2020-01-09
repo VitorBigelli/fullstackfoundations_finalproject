@@ -1,0 +1,30 @@
+<html>
+    <header>
+        <title> Restaurant's Hub </title>
+    </header>
+    <body>
+        <div>
+            <h1> Restaurant's Hub </h1>
+            <div>
+                <h3> {{ restaurant.name }} </h3>
+                <ul>
+                    {% for item in items %}
+                    <li>
+                        <p>
+                            {{ item.name }}
+                            </br>
+                            {{ item.price }}
+                            </br>
+                            {{ item.description }}
+                            </br>
+                            <a href='#'> Edit </a>
+                            </br>
+                            <a href='#'> Delete </a>
+                        </p>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
