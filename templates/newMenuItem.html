@@ -1,19 +1,20 @@
 <html>
     <header>
         <title> Restaurant's Hub </title>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
     </header>
     <body>
-        <div>
+        <div class='container'>
             <h1> Restaurant's Hub </h1>
-            <div>
+            <div class='container-inner'>
                 <h3>  New menu item to {{ restaurant.name }} restaurant: </h3> 
                 <form action='#' method='POST'>
-                    Name: <input name='name' type='text' > </br>
-                    Price: <input name='price' type='text' >  </br>
-                    Description: <input name='description' type='text' >  </br>
-                    Course: <input name='course' type='text' >  </br>
-                    <input type='submit' value='Create' action='/restaurant/{{restaurant.id}}/menu/new'>
-                    <a href='{{ url_for("showMenu", restaurant_id = restaurant.id )}}'> Cancel </a>
+                    <p> Name:</br> <input name='name' type='text' > </p>
+                    <p> Price: </br><input name='price' type='text' >  </p>
+                    <p> Description:</br> <input name='description' type='text' aria-multiline="true" class='description-input'>  </p>
+                    <p> Course: </br><input name='course' type='text' >  </p>
+                    <input type='submit' value='Create' action='/restaurant/{{restaurant.id}}/menu/new' class='button'>
+                    <a href='{{ url_for("showMenu", restaurant_id = restaurant.id )}}' class='cancel-button'> Cancel </a>
                 </form>                
             </div>
         </div>

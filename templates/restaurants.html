@@ -1,31 +1,32 @@
 <html>
     <header>
         <title> Restaurant's Hub </title>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
     </header>
     <body>
-        <div>
+        <div class='container'>
             <h1> Restaurant's Hub </h1>
-            <div>
-                <p>
+            <div class='container-inner'>
+                <div class='new'>
                     {% with messages = get_flashed_messages() %}
                         {% if messages %}
                             {% for message in messages %}
-                                <span> <strong> {{ message }} </strong></span>
+                                <span class='message'> {{ message }} </span>
                             {% endfor %}
                         {% endif %} 
                     {% endwith %}  
-                    <a href='{{ url_for("newRestaurant") }}'> New restaurant </a>
-                </p>
-                <ul>
+                    <a href='{{ url_for("newRestaurant") }}' class='button'> New restaurant </a>
+                </div>
+                <ul class='list'>
                     {% for restaurant in restaurants %}
-                    <li>
-                        <p>
+                    <li class='list-item'>
+                        <div class='list-item-name'>
                             <a href='{{ url_for("showMenu", restaurant_id = restaurant.id) }}'> {{restaurant.name }}</a> 
-                            </br>
-                            <a href='{{ url_for("editRestaurant", restaurant_id = restaurant.id )}}'> Edit </a>
-                            </br>
-                            <a href='{{ url_for("deleteRestaurant", restaurant_id = restaurant.id )}}'> Delete </a>
-                        </p>
+                        </div>
+                        <div class='list-item-edit'>
+                            <a href='{{ url_for("editRestaurant", restaurant_id = restaurant.id )}}'> 📝 </a>  
+                            <a href='{{ url_for("deleteRestaurant", restaurant_id = restaurant.id )}}'> 🗑️ </a>
+                        </div>
                     </li>
                     {% endfor %}
                 </ul>

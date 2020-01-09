@@ -1,16 +1,17 @@
 <html>
     <header>
         <title> Restaurant's Hub </title>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
     </header>
     <body>
-        <div>
+        <div class='container'>
             <h1> Restaurant's Hub </h1>
-            <div>
+            <div class='container-inner'>
                 <h3>  New restaurant: </h3> 
                 <form action='#' method='POST'>
                     Name: <input name='name' type='text' > 
-                    <input type='submit' value='Create'>
-                    <a href='{{ url_for("showRestaurants")}}'> Cancel </a>
+                    <input type='submit' value='Create' class='button' >
+                    <a href='{{ url_for("showRestaurants")}}' class='cancel-button'> Cancel </a>
                 </form>                
             </div>
         </div>

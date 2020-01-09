@@ -91,7 +91,7 @@ def newMenuItem(restaurant_id):
             session.add(newItem)
             session.commit()
             flash('New menu item has been created!')
-            return redirect(url_for('showMenu', restaurant_id = restaurant_id))
+            return redirect(url_for('showMenu', restaurant_id = restaurant.id))
 
 # Edit a menu item
 @app.route('/restaurant/<int:restaurant_id>/menu/<int:menuitem_id>/edit', methods=['GET', 'POST'])
@@ -112,7 +112,7 @@ def editMenuItem(restaurant_id, menuitem_id):
         session.add(itemToEdit)
         session.commit() 
         flash('Menu item has been edited!')
-        return redirect(url_for('showMenu', restaurant_id = restaurant_id))
+        return redirect(url_for('showMenu', restaurant_id = restaurant.id))
 
 # Delete a menu item 
 @app.route('/restaurant/<int:restaurant_id>/menu/<int:menuitem_id>/delete', methods=['GET', 'POST'])
@@ -123,7 +123,7 @@ def deleteMenuItem(restaurant_id, menuitem_id):
         session.delete(itemToDelete)
         session.commit()
         flash('Menu item has been deleted!')
-        return redirect(url_for('showMenu', restaurant_id = restaurant_id))
+        return redirect(url_for('showMenu', restaurant_id = restaurant.id))
     return render_template('deleteMenuItem.html', restaurant = restaurant, item = itemToDelete )
 
 

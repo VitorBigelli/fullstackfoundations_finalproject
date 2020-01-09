@@ -1,13 +1,15 @@
 <html>
     <header>
         <title> Restaurant's Hub </title>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
     </header>
     <body>
-        <div>
+        <div class='container'>
             <h1> Restaurant's Hub </h1>
-            <div>
+            <div class='container-inner'>
                 <h3> {{ restaurant.name }} </h3>
-                <p class='new-item-container'> 
+                <p class='new'> 
+                    <a href='{{ url_for("showRestaurants")}}' class='back-button'>  Voltar </a>
                     {% with messages = get_flashed_messages() %}
                         {% if messages %}
                             {% for message in messages %}
@@ -15,26 +17,26 @@
                             {% endfor %}
                         {% endif %} 
                     {% endwith %}  
-                    <a href='{{ url_for("newMenuItem", restaurant_id = restaurant.id )}}' class='new-item-button'> New Item</a>
+                    <a href='{{ url_for("newMenuItem", restaurant_id = restaurant.id )}}' class='button'> New Item</a>
                 </p>
-                <ul>
+                <ul class='list'>
                     {% for item in items %}
-                    <li>
-                        <p>
-                            {{ item.name }}
-                            </br>
-                            {{ item.price }}
-                            </br>
-                            {{ item.description }}
-                            </br>
-                            <a href='{{ url_for("editMenuItem", restaurant_id = restaurant.id, menuitem_id = item.id )}}'> Edit </a>
-                            </br>
-                            <a href='{{ url_for("deleteMenuItem", restaurant_id = restaurant.id, menuitem_id = item.id )}}'> Delete </a>
-                        </p>
+                    <li class='list-item'>
+                        <div class='list-item-header'>
+                            <span class='item-name'> {{ item.name }} </span>
+                            <span class='item-price'> {{ item.price }} </span>
+                        </div>
+                        <div class='list-item-body'>
+                            <p>{{ item.description }}</p>
+                        </div>
+                        <div class='list-item-edit'>
+                            <a href='{{ url_for("editMenuItem", restaurant_id = restaurant.id, menuitem_id = item.id )}}'> 📝 </a>
+                            <a href='{{ url_for("deleteMenuItem", restaurant_id = restaurant.id, menuitem_id = item.id )}}'> 🗑️ </a>
+                        </div>
                     </li>
                     {% endfor %}
                 </ul>
-            </div>
+            </div class='container-inner'>
         </div>
     </body>
 </html>
