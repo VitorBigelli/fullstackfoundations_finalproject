@@ -10,13 +10,16 @@
                 <h3> {{ restaurant.name }} </h3>
                 <p class='new'> 
                     <a href='{{ url_for("showRestaurants")}}' class='back-button'>  Voltar </a>
-                    {% with messages = get_flashed_messages() %}
-                        {% if messages %}
-                            {% for message in messages %}
-                                <span> <strong> {{ message }} </strong></span>
-                            {% endfor %}
-                        {% endif %} 
-                    {% endwith %}  
+                    
+                    <span class='message'>
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                {% for message in messages %} 
+                                    {{ message }} 
+                                {% endfor %}
+                            {% endif %} 
+                        {% endwith %} 
+                    </span> 
                     <a href='{{ url_for("newMenuItem", restaurant_id = restaurant.id )}}' class='button'> New Item</a>
                 </p>
                 <ul class='list'>
