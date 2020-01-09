@@ -8,8 +8,8 @@
             <div>
                 <h3>  Delete <strong>{{ item.name }}</strong> from {{ restaurant.name }} restaurant: </h3> 
                 <form action='#' method='POST'>
-                    <input type='submit' value='Delete'>
-                    <a href='#'> Cancel </a>
+                    <input type='submit' value='Delete' action='/restaurant/{{restaurant.id}}/menu/{{item.id}}/delete'>
+                    <a href='{{ url_for("showMenu", restaurant_id = restaurant.id )}}'> Cancel </a>
                 </form>                
             </div>
         </div>
