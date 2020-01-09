@@ -58,7 +58,7 @@ def deleteRestaurant(restaurant_id):
         session.commit() 
         return redirect(url_for('showRestaurants'))
     else:
-        return render_template('deleteRestaurant.html', restaurant_id = restaurant.id )
+        return render_template('deleteRestaurant.html', restaurant = restaurantToDelete )
 
 # -------------------------------------------------------------------------------------------------------------
 
@@ -66,6 +66,9 @@ def deleteRestaurant(restaurant_id):
 @app.route('/restaurant/<int:restaurant_id>')
 @app.route('/restaurant/<int:restaurant_id>/menu') 
 def showMenu(restaurant_id): 
+    restaurant = session.query(Restaurant).filter_by( id = restaurant_id).one()
+    items = session.query(MenuItem).filter_by( restaurant_id = restaurant.id).all() 
+    
     return render_template('menu.html', restaurant = restaurant, items = items )
 
 # Create a new menu item 

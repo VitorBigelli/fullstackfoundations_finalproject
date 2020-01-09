@@ -6,11 +6,14 @@
         <div>
             <h1> Restaurant's Hub </h1>
             <div>
+                <p>
+                    <a href='{{ url_for("newRestaurant") }}'> New restaurant </a>
+                </p>
                 <ul>
                     {% for restaurant in restaurants %}
                     <li>
                         <p>
-                            {{ restaurant.name }}
+                            <a href='{{ url_for("showMenu", restaurant_id = restaurant.id) }}'> {{restaurant.name }}</a> 
                             </br>
                             <a href='{{ url_for("editRestaurant", restaurant_id = restaurant.id )}}'> Edit </a>
                             </br>
