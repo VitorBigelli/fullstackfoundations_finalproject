@@ -9,7 +9,7 @@
                 <h3>  Edit restaurant: </h3> 
                 <form action='#' method='POST'>
                     Name: <input name='name' type='text' placeholder="{{ restaurant.name }}"> 
-                    <input type='submit' value='Update'>
+                    <input type='submit' value='Update' action='/restaurant/{{ restaurant.id }}/edit'>
                     <a href='#'> Cancel </a>
                 </form>                
             </div>
