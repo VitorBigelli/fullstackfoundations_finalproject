@@ -10,7 +10,7 @@ engine = create_engine('sqlite:///restaurantmenu.db')
 Base.metadata.bind = engine 
 DBSession = sessionmaker( bind = engine ) 
 
-sessions = DBSession() 
+session = DBSession() 
 
 app = Flask(__name__) 
 
@@ -30,6 +30,8 @@ item =  {'name':'Cheese Pizza','description':'made with fresh cheese','price':'$
 @app.route('/') 
 @app.route('/restaurants') 
 def showRestaurants(): 
+    restaurants = session.query(Restaurant).all()
+    print('Restaurants: %s' % restaurants)
     return render_template('restaurants.html', restaurants = restaurants)
 
 # Create a new restaurant

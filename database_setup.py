@@ -26,6 +26,7 @@ class MenuItem(Base):
     name = Column(String(80), nullable=False) 
     price = Column(String(80), nullable=False) 
     description = Column(String(250), nullable=False) 
+    course = Column(String(80), nullable=False)
 
     # Foreign key 
     restaurant_id = Column(Integer, ForeignKey('restaurant.id'))
