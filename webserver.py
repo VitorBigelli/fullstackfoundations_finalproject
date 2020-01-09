@@ -35,7 +35,7 @@ def showRestaurants():
 # Create a new restaurant
 @app.route('/restaurants/new', methods=['GET', 'POST']) 
 def newRestaurant(): 
-    return '<html><body> This page will be for making a new restaurant </body></html>'
+    return render_template('newRestaurant.html')
 
 # Edit a restaurant
 @app.route('/restaurants/<int:restaurant_id>/edit', methods=['GET', 'POST']) 
