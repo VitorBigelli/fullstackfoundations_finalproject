@@ -6,9 +6,9 @@
         <div>
             <h1> Restaurant's Hub </h1>
             <div>
-                <h3>  Delete restaurant: {{ restaurant_id }} </h3> 
+                <h3>  Delete restaurant: {{ restaurant.id }} </h3> 
                 <form action='#' method='POST'>
-                    <input type='submit' value='Delete'>
+                    <input type='submit' value='Delete' placeholder="{{ restaurant.name }}">
                     <a href='#'> Cancel </a>
                 </form>                
             </div>

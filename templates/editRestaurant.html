@@ -6,9 +6,9 @@
         <div>
             <h1> Restaurant's Hub </h1>
             <div>
-                <h3>  Edit restaurant: {{ restaurant_id }} </h3> 
+                <h3>  Edit restaurant: {{ restaurant.id }} </h3> 
                 <form action='#' method='POST'>
-                    Name: <input name='name' type='text' > 
+                    Name: <input name='name' type='text' placeholder="{{ restaurant.name }}"> 
                     <input type='submit' value='Create'>
                     <a href='#'> Cancel </a>
                 </form>                
