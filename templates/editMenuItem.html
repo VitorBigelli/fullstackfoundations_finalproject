@@ -8,8 +8,11 @@
             <div>
                 <h3>  Edit menu item of {{ restaurant.name }} restaurant: </h3> 
                 <form action='#' method='POST'>
-                    Name: <input name='name' type='text' placeholder='{{ item.name }}' > 
-                    <input type='submit' value='Create'>
+                    Name: <input name='name' type='text' placeholder="{{ item.name }}" > </br>
+                    Price: <input name='price' type='text' placeholder="{{ item.price }}"  >  </br>
+                    Description: <input name='description' type='text'  placeholder="{{ item.description }}" >  </br>
+                    Course: <input name='course' type='text' placeholder="{{ item.course }}"  >  </br>
+                    <input type='submit' value='Update' action='/restaurant/{{restaurant.id}}/menu/{{ item.id}}/edit'>
                     <a href='#'> Cancel </a>
                 </form>                
             </div>
