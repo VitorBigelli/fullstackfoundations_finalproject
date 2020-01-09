@@ -10,7 +10,7 @@
                 <form action='#' method='POST'>
                     Name: <input name='name' type='text' placeholder="{{ restaurant.name }}"> 
                     <input type='submit' value='Update' action='/restaurant/{{ restaurant.id }}/edit'>
-                    <a href='#'> Cancel </a>
+                    <a href='{{ url_for("showRestaurants")}}'> Cancel </a>
                 </form>                
             </div>
         </div>

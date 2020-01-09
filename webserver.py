@@ -19,7 +19,6 @@ app = Flask(__name__)
 @app.route('/restaurants') 
 def showRestaurants(): 
     restaurants = session.query(Restaurant).all()
-    print('Restaurants: %s' % restaurants)
     return render_template('restaurants.html', restaurants = restaurants)
 
 # Create a new restaurant

@@ -13,7 +13,7 @@
                     Description: <input name='description' type='text' >  </br>
                     Course: <input name='course' type='text' >  </br>
                     <input type='submit' value='Create' action='/restaurant/{{restaurant.id}}/menu/new'>
-                    <a href='#'> Cancel </a>
+                    <a href='{{ url_for("showMenu", restaurant_id = restaurant.id )}}'> Cancel </a>
                 </form>                
             </div>
         </div>

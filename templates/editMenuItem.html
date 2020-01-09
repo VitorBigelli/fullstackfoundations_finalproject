@@ -13,7 +13,7 @@
                     Description: <input name='description' type='text'  placeholder="{{ item.description }}" >  </br>
                     Course: <input name='course' type='text' placeholder="{{ item.course }}"  >  </br>
                     <input type='submit' value='Update' action='/restaurant/{{restaurant.id}}/menu/{{ item.id}}/edit'>
-                    <a href='#'> Cancel </a>
+                    <a href='{{ url_for("showMenu", restaurant_id = restaurant.id )}}'> Cancel </a>
                 </form>                
             </div>
         </div>

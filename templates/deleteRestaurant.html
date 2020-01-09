@@ -9,7 +9,7 @@
                 <h3>  Delete restaurant: {{ restaurant.name }} </h3> 
                 <form action='#' method='POST'>
                     <input type='submit' value='Delete' action='/restaurants/{{ restaurant.id }}/delete'>
-                    <a href='#'> Cancel </a>
+                    <a href='{{ url_for("showRestaurants")}}'> Cancel </a>
                 </form>                
             </div>
         </div>
