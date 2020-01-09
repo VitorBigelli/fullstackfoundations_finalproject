@@ -7,6 +7,9 @@
             <h1> Restaurant's Hub </h1>
             <div>
                 <h3> {{ restaurant.name }} </h3>
+                <p> 
+                    <a href='{{ url_for("newMenuItem", restaurant_id = restaurant.id )}}'> New Item</a>
+                </p>
                 <ul>
                     {% for item in items %}
                     <li>

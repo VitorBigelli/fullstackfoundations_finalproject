@@ -8,8 +8,11 @@
             <div>
                 <h3>  New menu item to {{ restaurant.name }} restaurant: </h3> 
                 <form action='#' method='POST'>
-                    Name: <input name='name' type='text' > 
-                    <input type='submit' value='Create'>
+                    Name: <input name='name' type='text' > </br>
+                    Price: <input name='price' type='text' >  </br>
+                    Description: <input name='description' type='text' >  </br>
+                    Course: <input name='course' type='text' >  </br>
+                    <input type='submit' value='Create' action='/restaurant/{{restaurant.id}}/menu/new'>
                     <a href='#'> Cancel </a>
                 </form>                
             </div>
