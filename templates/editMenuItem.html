@@ -1,0 +1,18 @@
+<html>
+    <header>
+        <title> Restaurant's Hub </title>
+    </header>
+    <body>
+        <div>
+            <h1> Restaurant's Hub </h1>
+            <div>
+                <h3>  Edit menu item of {{ restaurant.name }} restaurant: </h3> 
+                <form action='#' method='POST'>
+                    Name: <input name='name' type='text' placeholder='{{ item.name }}' > 
+                    <input type='submit' value='Create'>
+                    <a href='#'> Cancel </a>
+                </form>                
+            </div>
+        </div>
+    </body>
+</html>
