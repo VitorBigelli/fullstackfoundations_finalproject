@@ -68,7 +68,7 @@ def editMenuItem(restaurant_id, menuitem_id):
 # Delete a menu item 
 @app.route('/restaurant/<int:restaurant_id>/menu/<int:menuitem_id>/delete', methods=['GET', 'POST'])
 def deleteMenuItem(restaurant_id, menuitem_id): 
-    return '<html><body> This page will be for deleting menu item %s </body></html>' % item.id 
+    return render_template('deleteMenuItem.html', restaurant = restaurant, item = item )
 
 
 
